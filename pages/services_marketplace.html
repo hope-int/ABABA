@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Marketplace - ABABA Gold Trade Hub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fababagold2292back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="bg-surface shadow-elevated border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">ABABA Gold Trade Hub</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="admin_dashboard.html" class="text-text-secondary hover:text-primary transition-colors">Dashboard</a>
+                    <a href="product_catalog.html" class="text-text-secondary hover:text-primary transition-colors">Products</a>
+                    <a href="personal_dashboard.html" class="text-text-secondary hover:text-primary transition-colors">Personal</a>
+                    <a href="global_chat_interface.html" class="text-text-secondary hover:text-primary transition-colors">Chat</a>
+                    <a href="services_marketplace.html" class="text-primary font-medium border-b-2 border-primary pb-1">Services</a>
+                    <a href="subscription_management.html" class="text-text-secondary hover:text-primary transition-colors">Subscriptions</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1652841236281-576b8cacee20" 
+                                 alt="User profile picture" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm font-medium">John Smith</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-text-primary mb-2">Services Marketplace</h1>
+            <p class="text-text-secondary">Connect with specialized ABABA services for consulting, logistics, certification, and financial solutions</p>
+        </div>
+
+        <!-- Filters and Search -->
+        <div class="card mb-8">
+            <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="relative">
+                        <input type="text" placeholder="Search services..." 
+                               class="input-field pl-10 w-64" id="serviceSearch">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary"></i>
+                    </div>
+                    
+                    <select class="input-field w-48" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="logistics">Logistics</option>
+                        <option value="certification">Certification</option>
+                        <option value="financial">Financial Services</option>
+                    </select>
+                    
+                    <select class="input-field w-40" id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="local">Local</option>
+                        <option value="national">National</option>
+                        <option value="international">International</option>
+                    </select>
+                    
+                    <select class="input-field w-40" id="priceFilter">
+                        <option value="">All Prices</option>
+                        <option value="budget">$0 - $500</option>
+                        <option value="mid">$500 - $2000</option>
+                        <option value="premium">$2000+</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <button class="btn-secondary text-sm" id="resetFilters">
+                        <i class="fas fa-undo mr-2"></i>Reset
+                    </button>
+                    <span class="text-sm text-text-secondary">24 services found</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Categories Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Services Area -->
+            <div class="lg:col-span-3">
+                <!-- Featured Services -->
+                <section class="mb-8">
+                    <h2 class="text-xl font-semibold text-text-primary mb-6">Featured Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Gold Consulting Service -->
+                        <div class="card hover:shadow-elevated transition-all duration-200 cursor-pointer" onclick="openServiceDetail('consulting-1')">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.unsplash.com/photo-1714974528749-fc028e54feb9" 
+                                     alt="Professional gold market consultant in business attire" 
+                                     class="w-16 h-16 rounded-lg object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-semibold text-text-primary">Gold Market Analysis</h3>
+                                        <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded-full text-xs font-medium">Featured</span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary mb-3">Expert market analysis and trading strategies for gold professionals</p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-star text-accent text-sm"></i>
+                                                <span class="text-sm font-medium text-text-primary ml-1">4.9</span>
+                                                <span class="text-xs text-text-secondary ml-1">(127)</span>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">•</span>
+                                            <span class="text-sm text-text-secondary">Dr. Sarah Mitchell</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-lg font-bold text-primary">$1,200</div>
+                                            <div class="text-xs text-text-secondary">per consultation</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Logistics Service -->
+                        <div class="card hover:shadow-elevated transition-all duration-200 cursor-pointer" onclick="openServiceDetail('logistics-1')">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.unsplash.com/photo-1565891741441-64926e441838" 
+                                     alt="Gold transportation and logistics warehouse facility" 
+                                     class="w-16 h-16 rounded-lg object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-semibold text-text-primary">Secure Gold Transport</h3>
+                                        <span class="bg-success-100 text-success-800 px-2 py-1 rounded-full text-xs font-medium">Available</span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary mb-3">Insured transportation and logistics for precious metals worldwide</p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-star text-accent text-sm"></i>
+                                                <span class="text-sm font-medium text-text-primary ml-1">4.8</span>
+                                                <span class="text-xs text-text-secondary ml-1">(89)</span>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">•</span>
+                                            <span class="text-sm text-text-secondary">SecureMove Ltd</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-lg font-bold text-primary">$0.15</div>
+                                            <div class="text-xs text-text-secondary">per gram</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- All Services -->
+                <section>
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-text-primary">All Services</h2>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-text-secondary">Sort by:</span>
+                            <select class="input-field text-sm py-1" id="sortFilter">
+                                <option value="rating">Highest Rated</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6" id="servicesGrid">
+                        <!-- Certification Service -->
+                        <div class="card hover:shadow-elevated transition-all duration-200">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <img src="https://images.unsplash.com/photo-1656431756476-4dc873d79678" 
+                                     alt="Gold certification laboratory with testing equipment" 
+                                     class="w-full md:w-32 h-32 rounded-lg object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-text-primary mb-1">Gold Purity Certification</h3>
+                                            <p class="text-text-secondary mb-2">Certified testing and documentation for gold purity and authenticity</p>
+                                            <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                                <span><i class="fas fa-map-marker-alt mr-1"></i>New York, NY</span>
+                                                <span><i class="fas fa-clock mr-1"></i>2-3 business days</span>
+                                                <span><i class="fas fa-certificate mr-1"></i>ISO Certified</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-xl font-bold text-primary">$85</div>
+                                            <div class="text-sm text-text-secondary">per sample</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-star text-accent text-sm"></i>
+                                                <span class="text-sm font-medium text-text-primary ml-1">4.7</span>
+                                                <span class="text-xs text-text-secondary ml-1">(156 reviews)</span>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">GoldTest Labs</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="btn-secondary text-sm" onclick="contactProvider('cert-1')">
+                                                <i class="fas fa-comment mr-2"></i>Contact
+                                            </button>
+                                            <button class="btn-primary text-sm" onclick="bookService('cert-1')">
+                                                <i class="fas fa-calendar mr-2"></i>Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financial Service -->
+                        <div class="card hover:shadow-elevated transition-all duration-200">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <img src="https://images.unsplash.com/photo-1629103619873-e42d78481493" 
+                                     alt="Financial advisor reviewing gold investment portfolio" 
+                                     class="w-full md:w-32 h-32 rounded-lg object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-text-primary mb-1">Trade Finance Solutions</h3>
+                                            <p class="text-text-secondary mb-2">Flexible financing options for gold trade transactions and inventory</p>
+                                            <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                                <span><i class="fas fa-globe mr-1"></i>International</span>
+                                                <span><i class="fas fa-dollar-sign mr-1"></i>Up to $10M</span>
+                                                <span><i class="fas fa-shield-alt mr-1"></i>Insured</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-xl font-bold text-primary">2.5%</div>
+                                            <div class="text-sm text-text-secondary">monthly rate</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-star text-accent text-sm"></i>
+                                                <span class="text-sm font-medium text-text-primary ml-1">4.6</span>
+                                                <span class="text-xs text-text-secondary ml-1">(73 reviews)</span>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">GoldFinance Pro</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="btn-secondary text-sm" onclick="contactProvider('finance-1')">
+                                                <i class="fas fa-comment mr-2"></i>Contact
+                                            </button>
+                                            <button class="btn-primary text-sm" onclick="bookService('finance-1')">
+                                                <i class="fas fa-handshake mr-2"></i>Apply Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Insurance Service -->
+                        <div class="card hover:shadow-elevated transition-all duration-200">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <img src="https://images.unsplash.com/photo-1707002627401-5ad70f5817aa" 
+                                     alt="Insurance documentation and gold protection services" 
+                                     class="w-full md:w-32 h-32 rounded-lg object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-text-primary mb-1">Gold Trade Insurance</h3>
+                                            <p class="text-text-secondary mb-2">Comprehensive coverage for gold inventory, transport, and trade risks</p>
+                                            <div class="flex items-center space-x-4 text-sm text-text-secondary">
+                                                <span><i class="fas fa-shield-alt mr-1"></i>Full Coverage</span>
+                                                <span><i class="fas fa-clock mr-1"></i>24/7 Claims</span>
+                                                <span><i class="fas fa-award mr-1"></i>A+ Rated</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-xl font-bold text-primary">0.8%</div>
+                                            <div class="text-sm text-text-secondary">of value/year</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-star text-accent text-sm"></i>
+                                                <span class="text-sm font-medium text-text-primary ml-1">4.8</span>
+                                                <span class="text-xs text-text-secondary ml-1">(94 reviews)</span>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">SecureGold Insurance</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="btn-secondary text-sm" onclick="contactProvider('insurance-1')">
+                                                <i class="fas fa-comment mr-2"></i>Contact
+                                            </button>
+                                            <button class="btn-primary text-sm" onclick="bookService('insurance-1')">
+                                                <i class="fas fa-file-contract mr-2"></i>Get Quote
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                <!-- Quick Booking -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Quick Booking</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-secondary mb-2">Service Type</label>
+                            <select class="input-field">
+                                <option>Consulting</option>
+                                <option>Certification</option>
+                                <option>Logistics</option>
+                                <option>Financial</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-secondary mb-2">Preferred Date</label>
+                            <input type="date" class="input-field" value="2025-10-28">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-secondary mb-2">Budget Range</label>
+                            <select class="input-field">
+                                <option>$0 - $500</option>
+                                <option>$500 - $2,000</option>
+                                <option>$2,000 - $5,000</option>
+                                <option>$5,000+</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary w-full">
+                            <i class="fas fa-search mr-2"></i>Find Services
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Top Rated Providers -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Top Rated Providers</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1630463853293-1ee595395538" 
+                                 alt="Dr. Sarah Mitchell - Gold market consultant" 
+                                 class="w-10 h-10 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <div class="flex-1">
+                                <div class="font-medium text-text-primary text-sm">Dr. Sarah Mitchell</div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs"></i>
+                                    <span class="text-xs text-text-secondary ml-1">4.9 (127)</span>
+                                </div>
+                            </div>
+                            <button class="text-primary text-sm hover:text-primary-600">Contact</button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1634144201570-36a8e7b1313d" 
+                                 alt="Michael Chen - Logistics specialist" 
+                                 class="w-10 h-10 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <div class="flex-1">
+                                <div class="font-medium text-text-primary text-sm">Michael Chen</div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs"></i>
+                                    <span class="text-xs text-text-secondary ml-1">4.8 (89)</span>
+                                </div>
+                            </div>
+                            <button class="text-primary text-sm hover:text-primary-600">Contact</button>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1603650664750-506f35f30760" 
+                                 alt="David Rodriguez - Financial advisor" 
+                                 class="w-10 h-10 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <div class="flex-1">
+                                <div class="font-medium text-text-primary text-sm">David Rodriguez</div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs"></i>
+                                    <span class="text-xs text-text-secondary ml-1">4.7 (156)</span>
+                                </div>
+                            </div>
+                            <button class="text-primary text-sm hover:text-primary-600">Contact</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Service Categories -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Service Categories</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg cursor-pointer hover:bg-primary-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-chart-line text-primary"></i>
+                                <span class="text-sm font-medium text-text-primary">Consulting</span>
+                            </div>
+                            <span class="text-xs text-text-secondary bg-white px-2 py-1 rounded-full">12</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-accent-50 rounded-lg cursor-pointer hover:bg-accent-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-truck text-accent"></i>
+                                <span class="text-sm font-medium text-text-primary">Logistics</span>
+                            </div>
+                            <span class="text-xs text-text-secondary bg-white px-2 py-1 rounded-full">8</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg cursor-pointer hover:bg-secondary-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-certificate text-secondary"></i>
+                                <span class="text-sm font-medium text-text-primary">Certification</span>
+                            </div>
+                            <span class="text-xs text-text-secondary bg-white px-2 py-1 rounded-full">6</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg cursor-pointer hover:bg-success-100 transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-dollar-sign text-success"></i>
+                                <span class="text-sm font-medium text-text-primary">Financial</span>
+                            </div>
+                            <span class="text-xs text-text-secondary bg-white px-2 py-1 rounded-full">4</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Bookings -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Recent Bookings</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-success-50 rounded-lg">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <div class="flex-1">
+                                <div class="text-sm font-medium text-text-primary">Gold Analysis</div>
+                                <div class="text-xs text-text-secondary">Completed Oct 25</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-warning-50 rounded-lg">
+                            <i class="fas fa-clock text-warning"></i>
+                            <div class="flex-1">
+                                <div class="text-sm font-medium text-text-primary">Transport Service</div>
+                                <div class="text-xs text-text-secondary">Scheduled Oct 30</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Detail Modal -->
+    <div id="serviceDetailModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-y-0 right-0 w-full max-w-2xl bg-surface shadow-lg overflow-y-auto">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-text-primary">Service Details</h2>
+                    <button onclick="closeServiceDetail()" class="text-text-secondary hover:text-text-primary">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div id="serviceDetailContent">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-surface rounded-lg shadow-lg max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold text-text-primary">Book Service</h3>
+                    <button onclick="closeBookingModal()" class="text-text-secondary hover:text-text-primary">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-text-secondary mb-2">Preferred Date</label>
+                        <input type="date" class="input-field" value="2025-10-28">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-secondary mb-2">Time Slot</label>
+                        <select class="input-field">
+                            <option>9:00 AM - 10:00 AM</option>
+                            <option>10:00 AM - 11:00 AM</option>
+                            <option>2:00 PM - 3:00 PM</option>
+                            <option>3:00 PM - 4:00 PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-secondary mb-2">Additional Notes</label>
+                        <textarea class="input-field" rows="3" placeholder="Any specific requirements..."></textarea>
+                    </div>
+                    <div class="flex space-x-3 pt-4">
+                        <button onclick="closeBookingModal()" class="btn-secondary flex-1">Cancel</button>
+                        <button onclick="confirmBooking()" class="btn-primary flex-1">Confirm Booking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service data
+        const serviceData = {
+            'consulting-1': {
+                title: 'Gold Market Analysis',
+                provider: 'Dr. Sarah Mitchell',
+                rating: 4.9,
+                reviews: 127,
+                price: '$1,200',
+                priceUnit: 'per consultation',
+                image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                description: 'Comprehensive gold market analysis with expert insights into price trends, market dynamics, and strategic trading recommendations.',
+                features: ['Market Trend Analysis', 'Price Forecasting', 'Risk Assessment', 'Trading Strategies'],
+                availability: 'Available Mon-Fri, 9 AM - 5 PM',
+                location: 'New York, NY (Remote consultations available)'
+            },
+            'logistics-1': {
+                title: 'Secure Gold Transport',
+                provider: 'SecureMove Ltd',
+                rating: 4.8,
+                reviews: 89,
+                price: '$0.15',
+                priceUnit: 'per gram',
+                image: 'https://images.pixabay.com/photo/2021/08/04/13/06/shipping-6521607_1280.jpg',
+                description: 'Professional gold transportation services with full insurance coverage and real-time tracking.',
+                features: ['Insured Transport', 'Real-time Tracking', '24/7 Security', 'International Shipping'],
+                availability: 'Available 24/7',
+                location: 'Worldwide coverage'
+            }
+        };
+
+        // Filter functionality
+        document.getElementById('serviceSearch').addEventListener('input', filterServices);
+        document.getElementById('categoryFilter').addEventListener('change', filterServices);
+        document.getElementById('locationFilter').addEventListener('change', filterServices);
+        document.getElementById('priceFilter').addEventListener('change', filterServices);
+        document.getElementById('sortFilter').addEventListener('change', sortServices);
+
+        document.getElementById('resetFilters').addEventListener('click', () => {
+            document.getElementById('serviceSearch').value = '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('locationFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.getElementById('sortFilter').value = 'rating';
+            filterServices();
+        });
+
+        function filterServices() {
+            // Simulate filtering logic
+            const searchTerm = document.getElementById('serviceSearch').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const location = document.getElementById('locationFilter').value;
+            const price = document.getElementById('priceFilter').value;
+            
+            // Update results count
+            let resultCount = 24;
+            if (searchTerm) resultCount -= 3;
+            if (category) resultCount -= 5;
+            if (location) resultCount -= 2;
+            if (price) resultCount -= 4;
+            
+            document.querySelector('.text-text-secondary').textContent = `${Math.max(1, resultCount)} services found`;
+        }
+
+        function sortServices() {
+            // Simulate sorting logic
+            const sortBy = document.getElementById('sortFilter').value;
+            console.log('Sorting by:', sortBy);
+        }
+
+        function openServiceDetail(serviceId) {
+            const service = serviceData[serviceId];
+            if (!service) return;
+
+            const content = `
+                <div class="space-y-6">
+                    <img src="${service.image}" alt="${service.title} service provider" class="w-full h-48 object-cover rounded-lg">
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-2">${service.title}</h3>
+                        <p class="text-text-secondary mb-4">${service.description}</p>
+                        
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-accent"></i>
+                                <span class="font-medium text-text-primary ml-1">${service.rating}</span>
+                                <span class="text-text-secondary ml-1">(${service.reviews} reviews)</span>
+                            </div>
+                            <span class="text-text-secondary">•</span>
+                            <span class="text-text-secondary">${service.provider}</span>
+                        </div>
+                        
+                        <div class="bg-primary-50 p-4 rounded-lg mb-4">
+                            <div class="text-2xl font-bold text-primary">${service.price}</div>
+                            <div class="text-sm text-text-secondary">${service.priceUnit}</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-text-primary mb-3">Features Included</h4>
+                        <ul class="space-y-2">
+                            ${service.features.map(feature => `
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-success mr-2"></i>
+                                    <span class="text-text-secondary">${feature}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-text-primary mb-2">Availability</h4>
+                        <p class="text-text-secondary">${service.availability}</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-text-primary mb-2">Location</h4>
+                        <p class="text-text-secondary">${service.location}</p>
+                    </div>
+                    
+                    <div class="flex space-x-3 pt-4">
+                        <button onclick="contactProvider('${serviceId}')" class="btn-secondary flex-1">
+                            <i class="fas fa-comment mr-2"></i>Contact Provider
+                        </button>
+                        <button onclick="bookService('${serviceId}')" class="btn-primary flex-1">
+                            <i class="fas fa-calendar mr-2"></i>Book Service
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('serviceDetailContent').innerHTML = content;
+            document.getElementById('serviceDetailModal').classList.remove('hidden');
+        }
+
+        function closeServiceDetail() {
+            document.getElementById('serviceDetailModal').classList.add('hidden');
+        }
+
+        function bookService(serviceId) {
+            closeServiceDetail();
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function confirmBooking() {
+            // Simulate booking confirmation
+            alert('Booking confirmed! You will receive a confirmation email shortly.');
+            closeBookingModal();
+        }
+
+        function contactProvider(providerId) {
+            // Simulate contact functionality
+            alert('Opening chat with provider...');
+        }
+
+        // Close modals when clicking outside
+        document.getElementById('serviceDetailModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('serviceDetailModal')) {
+                closeServiceDetail();
+            }
+        });
+
+        document.getElementById('bookingModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('bookingModal')) {
+                closeBookingModal();
+            }
+        });
+
+        // Service category filtering
+        document.querySelectorAll('.bg-primary-50, .bg-accent-50, .bg-secondary-50, .bg-success-50').forEach(category => {
+            category.addEventListener('click', () => {
+                const categoryType = category.querySelector('span').textContent.toLowerCase();
+                document.getElementById('categoryFilter').value = categoryType;
+                filterServices();
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            filterServices();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
