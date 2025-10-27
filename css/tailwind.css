@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #B8860B; /* dark-goldenrod */
+  --color-primary-50: #FEF7E0; /* light-goldenrod-50 */
+  --color-primary-100: #FDECC8; /* light-goldenrod-100 */
+  --color-primary-200: #FBD38D; /* light-goldenrod-200 */
+  --color-primary-300: #F6AD55; /* light-goldenrod-300 */
+  --color-primary-400: #ED8936; /* light-goldenrod-400 */
+  --color-primary-500: #B8860B; /* dark-goldenrod-500 */
+  --color-primary-600: #9C6F0A; /* dark-goldenrod-600 */
+  --color-primary-700: #7C5808; /* dark-goldenrod-700 */
+  --color-primary-800: #5D4206; /* dark-goldenrod-800 */
+  --color-primary-900: #3E2C04; /* dark-goldenrod-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #4A5568; /* slate-gray */
+  --color-secondary-50: #F7FAFC; /* slate-gray-50 */
+  --color-secondary-100: #EDF2F7; /* slate-gray-100 */
+  --color-secondary-200: #E2E8F0; /* slate-gray-200 */
+  --color-secondary-300: #CBD5E0; /* slate-gray-300 */
+  --color-secondary-400: #A0AEC0; /* slate-gray-400 */
+  --color-secondary-500: #4A5568; /* slate-gray-500 */
+  --color-secondary-600: #2D3748; /* slate-gray-600 */
+  --color-secondary-700: #1A202C; /* slate-gray-700 */
+  --color-secondary-800: #171923; /* slate-gray-800 */
+  --color-secondary-900: #0F1419; /* slate-gray-900 */
+
+  /* Accent Colors */
+  --color-accent: #E6B800; /* vibrant-gold */
+  --color-accent-50: #FFFBEB; /* vibrant-gold-50 */
+  --color-accent-100: #FEF3C7; /* vibrant-gold-100 */
+  --color-accent-200: #FDE68A; /* vibrant-gold-200 */
+  --color-accent-300: #FCD34D; /* vibrant-gold-300 */
+  --color-accent-400: #FBBF24; /* vibrant-gold-400 */
+  --color-accent-500: #E6B800; /* vibrant-gold-500 */
+  --color-accent-600: #D97706; /* vibrant-gold-600 */
+  --color-accent-700: #B45309; /* vibrant-gold-700 */
+  --color-accent-800: #92400E; /* vibrant-gold-800 */
+  --color-accent-900: #78350F; /* vibrant-gold-900 */
+
+  /* Background Colors */
+  --color-background: #FAFAFA; /* warm-off-white */
+  --color-surface: #FFFFFF; /* pure-white */
+
+  /* Text Colors */
+  --color-text-primary: #2D3748; /* deep-charcoal */
+  --color-text-secondary: #718096; /* medium-gray */
+
+  /* Status Colors */
+  --color-success: #38A169; /* professional-green */
+  --color-success-50: #F0FFF4; /* professional-green-50 */
+  --color-success-100: #C6F6D5; /* professional-green-100 */
+  --color-success-200: #9AE6B4; /* professional-green-200 */
+  --color-success-300: #68D391; /* professional-green-300 */
+  --color-success-400: #48BB78; /* professional-green-400 */
+  --color-success-500: #38A169; /* professional-green-500 */
+  --color-success-600: #2F855A; /* professional-green-600 */
+  --color-success-700: #276749; /* professional-green-700 */
+  --color-success-800: #22543D; /* professional-green-800 */
+  --color-success-900: #1C4532; /* professional-green-900 */
+
+  --color-warning: #D69E2E; /* amber-warning */
+  --color-warning-50: #FFFBEB; /* amber-warning-50 */
+  --color-warning-100: #FEF3C7; /* amber-warning-100 */
+  --color-warning-200: #FDE68A; /* amber-warning-200 */
+  --color-warning-300: #FCD34D; /* amber-warning-300 */
+  --color-warning-400: #FBBF24; /* amber-warning-400 */
+  --color-warning-500: #D69E2E; /* amber-warning-500 */
+  --color-warning-600: #D97706; /* amber-warning-600 */
+  --color-warning-700: #B45309; /* amber-warning-700 */
+  --color-warning-800: #92400E; /* amber-warning-800 */
+  --color-warning-900: #78350F; /* amber-warning-900 */
+
+  --color-error: #E53E3E; /* controlled-red */
+  --color-error-50: #FED7D7; /* controlled-red-50 */
+  --color-error-100: #FEB2B2; /* controlled-red-100 */
+  --color-error-200: #FC8181; /* controlled-red-200 */
+  --color-error-300: #F56565; /* controlled-red-300 */
+  --color-error-400: #E53E3E; /* controlled-red-400 */
+  --color-error-500: #C53030; /* controlled-red-500 */
+  --color-error-600: #9B2C2C; /* controlled-red-600 */
+  --color-error-700: #742A2A; /* controlled-red-700 */
+  --color-error-800: #63171B; /* controlled-red-800 */
+  --color-error-900: #521B1F; /* controlled-red-900 */
+
+  /* Border Colors */
+  --color-border: #E2E8F0; /* subtle-border */
+  --color-border-light: #F7FAFC; /* light-border */
+
+  /* Shadow Variables */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Animation Variables */
+  --transition-fast: 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md font-medium transition-all duration-200 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-4 py-2 rounded-md font-medium transition-all duration-200 hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-4 py-2 rounded-md font-medium transition-all duration-200 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-sm border border-border p-6;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .transition-micro {
+    transition-duration: var(--transition-fast);
+  }
+
+  .transition-normal {
+    transition-duration: var(--transition-normal);
+  }
+
+  .transition-slow {
+    transition-duration: var(--transition-slow);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-floating {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Responsive Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
