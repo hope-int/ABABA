@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Chat Interface - ABABA Gold Trade Hub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fababagold2292back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="bg-surface shadow-elevated border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">ABABA Gold Trade Hub</span>
+                    </div>
+                    <span class="text-sm text-text-secondary bg-accent-50 px-2 py-1 rounded-full">
+                        <i class="fas fa-comments mr-1"></i>Global Chat
+                    </span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="admin_dashboard.html" class="text-text-secondary hover:text-primary transition-colors">Dashboard</a>
+                    <a href="product_catalog.html" class="text-text-secondary hover:text-primary transition-colors">Products</a>
+                    <a href="personal_dashboard.html" class="text-text-secondary hover:text-primary transition-colors">Personal</a>
+                    <a href="global_chat_interface.html" class="text-primary font-medium border-b-2 border-primary pb-1">Chat</a>
+                    <a href="services_marketplace.html" class="text-text-secondary hover:text-primary transition-colors">Services</a>
+                    <a href="subscription_management.html" class="text-text-secondary hover:text-primary transition-colors">Subscriptions</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1712217559097-cc2aaf698767" 
+                                 alt="User profile picture showing professional headshot" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm font-medium">John Smith</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                    <button id="mobileMenuBtn" class="md:hidden text-text-secondary hover:text-primary">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Chat Interface -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-140px)]">
+            <!-- Public Chat Panel -->
+            <div class="lg:col-span-2 card flex flex-col h-full">
+                <!-- Chat Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-border">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-primary-100 rounded-full p-2">
+                            <i class="fas fa-globe text-primary"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-text-primary">Public Discussion</h2>
+                            <p class="text-sm text-text-secondary">Community chat for all members</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-success bg-success-50 px-2 py-1 rounded-full">
+                            <i class="fas fa-circle text-xs mr-1"></i>247 Online
+                        </span>
+                        <button class="text-text-secondary hover:text-primary transition-colors">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="flex-1 overflow-y-auto py-4 space-y-4" id="publicChatMessages">
+                    <!-- Message 1 -->
+                    <div class="flex space-x-3">
+                        <img src="https://images.unsplash.com/photo-1708390071834-ba29854055aa" 
+                             alt="Profile picture of Sarah Johnson, gold importer" 
+                             class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-medium text-text-primary">Sarah Johnson</span>
+                                <span class="bg-accent-100 text-accent-800 px-2 py-0.5 rounded-full text-xs font-medium">Importer</span>
+                                <span class="text-xs text-text-secondary">2 minutes ago</span>
+                            </div>
+                            <div class="bg-surface border border-border rounded-lg p-3">
+                                <p class="text-text-primary">Good morning everyone! Gold rates are looking stable today. Anyone seeing similar trends in their regions?</p>
+                                <div class="flex items-center space-x-4 mt-2 pt-2 border-t border-border-light">
+                                    <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                        <i class="far fa-heart"></i>
+                                        <span class="text-sm">12</span>
+                                    </button>
+                                    <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                        <i class="far fa-comment"></i>
+                                        <span class="text-sm">Reply</span>
+                                    </button>
+                                    <button class="text-text-secondary hover:text-primary transition-colors">
+                                        <i class="fas fa-share text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message 2 with Image -->
+                    <div class="flex space-x-3">
+                        <img src="https://images.unsplash.com/photo-1635946680486-09420d25eb0b" 
+                             alt="Profile picture of Michael Chen, gold manufacturer" 
+                             class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-medium text-text-primary">Michael Chen</span>
+                                <span class="bg-primary-100 text-primary-800 px-2 py-0.5 rounded-full text-xs font-medium">Manufacturer</span>
+                                <span class="text-xs text-text-secondary">5 minutes ago</span>
+                            </div>
+                            <div class="bg-surface border border-border rounded-lg p-3">
+                                <p class="text-text-primary mb-3">Just received our latest batch of 24K gold bars. Quality is exceptional this month!</p>
+                                <div class="rounded-lg overflow-hidden mb-3">
+                                    <img src="https://images.unsplash.com/photo-1651068096660-47fd920510a0" 
+                                         alt="High-quality 24K gold bars arranged in neat rows showing exceptional craftsmanship" 
+                                         class="w-full h-48 object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                </div>
+                                <div class="flex items-center space-x-4 pt-2 border-t border-border-light">
+                                    <button class="flex items-center space-x-1 text-primary">
+                                        <i class="fas fa-heart"></i>
+                                        <span class="text-sm">24</span>
+                                    </button>
+                                    <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                        <i class="far fa-comment"></i>
+                                        <span class="text-sm">Reply</span>
+                                    </button>
+                                    <button class="text-text-secondary hover:text-primary transition-colors">
+                                        <i class="fas fa-share text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message 3 with Rate Reference -->
+                    <div class="flex space-x-3">
+                        <img src="https://images.unsplash.com/photo-1724718543723-76a159863d20" 
+                             alt="Profile picture of David Rodriguez, gold wholesaler" 
+                             class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-medium text-text-primary">David Rodriguez</span>
+                                <span class="bg-secondary-100 text-secondary-800 px-2 py-0.5 rounded-full text-xs font-medium">Wholesaler</span>
+                                <span class="text-xs text-text-secondary">8 minutes ago</span>
+                            </div>
+                            <div class="bg-surface border border-border rounded-lg p-3">
+                                <p class="text-text-primary mb-3">Current market analysis shows promising trends. Here's today's rate snapshot:</p>
+                                <div class="bg-primary-50 border border-primary-200 rounded-lg p-3 mb-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-primary">24K Gold Rate</span>
+                                        <span class="text-lg font-bold text-primary">$2,045.50/oz</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-success mt-1">
+                                        <i class="fas fa-arrow-up mr-1"></i>
+                                        <span>+1.2% from yesterday</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4 pt-2 border-t border-border-light">
+                                    <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                        <i class="far fa-heart"></i>
+                                        <span class="text-sm">8</span>
+                                    </button>
+                                    <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                        <i class="far fa-comment"></i>
+                                        <span class="text-sm">Reply</span>
+                                    </button>
+                                    <button class="text-text-secondary hover:text-primary transition-colors">
+                                        <i class="fas fa-share text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typing Indicator -->
+                    <div class="flex space-x-3" id="typingIndicator">
+                        <img src="https://images.unsplash.com/photo-1541507145028-484a27b34ab6" 
+                             alt="Profile picture of Alex Thompson typing a message" 
+                             class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <span class="font-medium text-text-primary">Alex Thompson</span>
+                                <span class="bg-accent-100 text-accent-800 px-2 py-0.5 rounded-full text-xs font-medium">Importer</span>
+                            </div>
+                            <div class="bg-surface border border-border rounded-lg p-3">
+                                <div class="flex items-center space-x-2 text-text-secondary">
+                                    <div class="flex space-x-1">
+                                        <div class="w-2 h-2 bg-text-secondary rounded-full animate-bounce"></div>
+                                        <div class="w-2 h-2 bg-text-secondary rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                        <div class="w-2 h-2 bg-text-secondary rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                    </div>
+                                    <span class="text-sm">typing...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Composer -->
+                <div class="border-t border-border pt-4">
+                    <div class="flex items-end space-x-3">
+                        <img src="https://images.unsplash.com/photo-1681372751318-3691e9614a09" 
+                             alt="Your profile picture for message composition" 
+                             class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <div class="bg-surface border border-border rounded-lg">
+                                <textarea 
+                                    id="messageInput"
+                                    placeholder="Share your thoughts with the community..."
+                                    class="w-full p-3 border-0 resize-none focus:outline-none focus:ring-0 rounded-t-lg"
+                                    rows="3"></textarea>
+                                <div class="flex items-center justify-between p-3 border-t border-border-light">
+                                    <div class="flex items-center space-x-3">
+                                        <button class="text-text-secondary hover:text-primary transition-colors" title="Attach Image">
+                                            <i class="fas fa-image"></i>
+                                        </button>
+                                        <button class="text-text-secondary hover:text-primary transition-colors" title="Add Gold Rate">
+                                            <i class="fas fa-coins"></i>
+                                        </button>
+                                        <button class="text-text-secondary hover:text-primary transition-colors" title="Share Business Card">
+                                            <i class="fas fa-id-card"></i>
+                                        </button>
+                                        <select class="text-sm border border-border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                            <option>Public</option>
+                                            <option>Members Only</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-primary">
+                                        <i class="fas fa-paper-plane mr-2"></i>Post
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Private Chat Panel -->
+            <div class="card flex flex-col h-full">
+                <!-- Private Chat Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-border">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-accent-100 rounded-full p-2">
+                            <i class="fas fa-user-friends text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary">Private Messages</h3>
+                            <p class="text-sm text-text-secondary">Direct conversations</p>
+                        </div>
+                    </div>
+                    <button class="text-text-secondary hover:text-primary transition-colors">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Search -->
+                <div class="py-3">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            placeholder="Search conversations..."
+                            class="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary"></i>
+                    </div>
+                </div>
+
+                <!-- Conversation List -->
+                <div class="flex-1 overflow-y-auto space-y-2">
+                    <!-- Active Conversation -->
+                    <div class="bg-primary-50 border border-primary-200 rounded-lg p-3 cursor-pointer">
+                        <div class="flex items-center space-x-3">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1592831383329-23d79a212006" 
+                                     alt="Profile picture of Sarah Johnson for private chat" 
+                                     class="w-10 h-10 rounded-full object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-success rounded-full border-2 border-surface"></div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-text-primary truncate">Sarah Johnson</span>
+                                    <span class="text-xs text-text-secondary">2m</span>
+                                </div>
+                                <p class="text-sm text-text-secondary truncate">Thanks for the gold rate update...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unread Conversation -->
+                    <div class="bg-surface border border-border rounded-lg p-3 cursor-pointer hover:bg-primary-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1710604885283-b598ca251936" 
+                                     alt="Profile picture of Michael Chen for private chat" 
+                                     class="w-10 h-10 rounded-full object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-success rounded-full border-2 border-surface"></div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-text-primary truncate">Michael Chen</span>
+                                    <div class="flex items-center space-x-1">
+                                        <span class="text-xs text-text-secondary">15m</span>
+                                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                                <p class="text-sm font-medium text-text-primary truncate">Can we discuss the bulk order?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Conversation -->
+                    <div class="bg-surface border border-border rounded-lg p-3 cursor-pointer hover:bg-primary-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1724718543723-76a159863d20" 
+                                     alt="Profile picture of David Rodriguez for private chat" 
+                                     class="w-10 h-10 rounded-full object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-text-secondary rounded-full border-2 border-surface"></div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-text-primary truncate">David Rodriguez</span>
+                                    <span class="text-xs text-text-secondary">1h</span>
+                                </div>
+                                <p class="text-sm text-text-secondary truncate">Perfect! Let's finalize the details</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offline Conversation -->
+                    <div class="bg-surface border border-border rounded-lg p-3 cursor-pointer hover:bg-primary-50 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1652376924447-ab929125ee31" 
+                                     alt="Profile picture of Alex Thompson for private chat" 
+                                     class="w-10 h-10 rounded-full object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-text-secondary rounded-full border-2 border-surface"></div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-text-primary truncate">Alex Thompson</span>
+                                    <span class="text-xs text-text-secondary">3h</span>
+                                </div>
+                                <p class="text-sm text-text-secondary truncate">Great meeting you at the conference</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="border-t border-border pt-4 mt-4">
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-secondary text-sm">
+                            <i class="fas fa-user-plus mr-2"></i>Add Contact
+                        </button>
+                        <button class="btn-accent text-sm">
+                            <i class="fas fa-users mr-2"></i>Group Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-y-0 left-0 w-64 bg-surface shadow-lg">
+            <div class="p-4 border-b border-border">
+                <div class="flex items-center justify-between">
+                    <span class="text-lg font-semibold text-text-primary">Menu</span>
+                    <button id="closeMobileMenu" class="text-text-secondary hover:text-text-primary">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="p-4 space-y-2">
+                <a href="admin_dashboard.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Dashboard</a>
+                <a href="product_catalog.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Products</a>
+                <a href="personal_dashboard.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Personal</a>
+                <a href="global_chat_interface.html" class="block py-2 px-3 text-primary bg-primary-50 rounded-md font-medium">Chat</a>
+                <a href="services_marketplace.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Services</a>
+                <a href="subscription_management.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Subscriptions</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Chat Moderation Modal (Admin Only) -->
+    <div id="moderationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-surface rounded-lg shadow-floating max-w-md w-full">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-text-primary">Message Moderation</h3>
+                        <button id="closeModerationModal" class="text-text-secondary hover:text-text-primary">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Action</label>
+                            <select class="w-full border border-border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                <option>Flag for Review</option>
+                                <option>Hide Message</option>
+                                <option>Warn User</option>
+                                <option>Suspend User</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Reason</label>
+                            <textarea class="w-full border border-border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500" rows="3" placeholder="Enter moderation reason..."></textarea>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="btn-primary flex-1">Apply Action</button>
+                            <button id="cancelModeration" class="btn-secondary flex-1">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMobileMenu) {
+            closeMobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        mobileMenu?.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Message input handling
+        const messageInput = document.getElementById('messageInput');
+        let typingTimer;
+
+        messageInput?.addEventListener('input', () => {
+            // Show typing indicator
+            clearTimeout(typingTimer);
+            
+            // Hide typing indicator after 2 seconds of no typing
+            typingTimer = setTimeout(() => {
+                // Hide typing indicator logic here
+            }, 2000);
+        });
+
+        // Auto-resize textarea
+        messageInput?.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+        });
+
+        // Simulate real-time message updates
+        function addNewMessage(user, message, role, timeAgo = 'now') {
+            const messagesContainer = document.getElementById('publicChatMessages');
+            const messageElement = document.createElement('div');
+            messageElement.className = 'flex space-x-3';
+            
+            messageElement.innerHTML = `
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                     alt="Profile picture of ${user}" 
+                     class="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                <div class="flex-1">
+                    <div class="flex items-center space-x-2 mb-1">
+                        <span class="font-medium text-text-primary">${user}</span>
+                        <span class="bg-primary-100 text-primary-800 px-2 py-0.5 rounded-full text-xs font-medium">${role}</span>
+                        <span class="text-xs text-text-secondary">${timeAgo}</span>
+                    </div>
+                    <div class="bg-surface border border-border rounded-lg p-3">
+                        <p class="text-text-primary">${message}</p>
+                        <div class="flex items-center space-x-4 mt-2 pt-2 border-t border-border-light">
+                            <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                <i class="far fa-heart"></i>
+                                <span class="text-sm">0</span>
+                            </button>
+                            <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                <i class="far fa-comment"></i>
+                                <span class="text-sm">Reply</span>
+                            </button>
+                            <button class="text-text-secondary hover:text-primary transition-colors">
+                                <i class="fas fa-share text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Remove typing indicator before adding new message
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+            
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Simulate new messages every 30 seconds
+        const sampleMessages = [
+            { user: 'Emma Wilson', message: 'Market volatility is creating some interesting opportunities today.', role: 'Wholesaler' },
+            { user: 'James Parker', message: 'Our new refining process is showing 99.9% purity rates consistently.', role: 'Manufacturer' },
+            { user: 'Lisa Chang', message: 'International shipping rates have stabilized this quarter.', role: 'Importer' }
+        ];
+
+        let messageIndex = 0;
+        setInterval(() => {
+            if (messageIndex < sampleMessages.length) {
+                const msg = sampleMessages[messageIndex];
+                addNewMessage(msg.user, msg.message, msg.role);
+                messageIndex++;
+            }
+        }, 30000);
+
+        // Like button functionality
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.fa-heart')) {
+                const heartIcon = e.target.closest('.fa-heart');
+                const countSpan = heartIcon.parentElement.querySelector('span');
+                const currentCount = parseInt(countSpan.textContent);
+                
+                if (heartIcon.classList.contains('far')) {
+                    heartIcon.classList.remove('far');
+                    heartIcon.classList.add('fas');
+                    heartIcon.parentElement.classList.add('text-primary');
+                    countSpan.textContent = currentCount + 1;
+                } else {
+                    heartIcon.classList.remove('fas');
+                    heartIcon.classList.add('far');
+                    heartIcon.parentElement.classList.remove('text-primary');
+                    countSpan.textContent = Math.max(0, currentCount - 1);
+                }
+            }
+        });
+
+        // Private chat conversation switching
+        document.querySelectorAll('.cursor-pointer').forEach(conversation => {
+            conversation.addEventListener('click', () => {
+                // Remove active state from all conversations
+                document.querySelectorAll('.bg-primary-50.border-primary-200').forEach(active => {
+                    active.classList.remove('bg-primary-50', 'border-primary-200');
+                    active.classList.add('bg-surface', 'border-border');
+                });
+                
+                // Add active state to clicked conversation
+                conversation.classList.remove('bg-surface', 'border-border');
+                conversation.classList.add('bg-primary-50', 'border-primary-200');
+                
+                // Remove unread indicator
+                const unreadDot = conversation.querySelector('.bg-primary.rounded-full');
+                if (unreadDot) {
+                    unreadDot.remove();
+                }
+                
+                // Update message text to normal weight
+                const messageText = conversation.querySelector('.font-medium.text-text-primary');
+                if (messageText && messageText.textContent !== conversation.querySelector('.font-medium.text-text-primary.truncate').textContent) {
+                    messageText.classList.remove('font-medium');
+                    messageText.classList.add('text-text-secondary');
+                }
+            });
+        });
+
+        // Moderation modal handling
+        const moderationModal = document.getElementById('moderationModal');
+        const closeModerationModal = document.getElementById('closeModerationModal');
+        const cancelModeration = document.getElementById('cancelModeration');
+
+        // Show moderation modal on right-click (admin only)
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.closest('.bg-surface.border.border-border.rounded-lg.p-3')) {
+                e.preventDefault();
+                moderationModal.classList.remove('hidden');
+            }
+        });
+
+        closeModerationModal?.addEventListener('click', () => {
+            moderationModal.classList.add('hidden');
+        });
+
+        cancelModeration?.addEventListener('click', () => {
+            moderationModal.classList.add('hidden');
+        });
+
+        // Close moderation modal when clicking outside
+        moderationModal?.addEventListener('click', (e) => {
+            if (e.target === moderationModal) {
+                moderationModal.classList.add('hidden');
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('input[placeholder="Search conversations..."]');
+        searchInput?.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const conversations = document.querySelectorAll('.cursor-pointer');
+            
+            conversations.forEach(conversation => {
+                const userName = conversation.querySelector('.font-medium.text-text-primary.truncate').textContent.toLowerCase();
+                const messageText = conversation.querySelector('.text-sm').textContent.toLowerCase();
+                
+                if (userName.includes(searchTerm) || messageText.includes(searchTerm)) {
+                    conversation.style.display = 'block';
+                } else {
+                    conversation.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        });
+
+        // Post message functionality
+        document.querySelector('.btn-primary').addEventListener('click', () => {
+            const messageText = messageInput.value.trim();
+            if (messageText) {
+                addNewMessage('John Smith', messageText, 'Wholesaler', 'now');
+                messageInput.value = '';
+                messageInput.style.height = 'auto';
+            }
+        });
+
+        // Enter key to send message
+        messageInput?.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                document.querySelector('.btn-primary').click();
+            }
+        });
+
+        // Update online count periodically
+        function updateOnlineCount() {
+            const onlineCountElement = document.querySelector('.text-success span');
+            if (onlineCountElement) {
+                const currentCount = parseInt(onlineCountElement.textContent.split(' ')[0]);
+                const variation = Math.floor(Math.random() * 10) - 5;
+                const newCount = Math.max(200, currentCount + variation);
+                onlineCountElement.innerHTML = `<i class="fas fa-circle text-xs mr-1"></i>${newCount} Online`;
+            }
+        }
+
+        // Update online count every 45 seconds
+        setInterval(updateOnlineCount, 45000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
