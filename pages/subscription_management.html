@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Management - ABABA Gold Trade Hub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fababagold2292back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="bg-surface shadow-elevated border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">ABABA Gold Trade Hub</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="admin_dashboard.html" class="text-text-secondary hover:text-primary transition-colors">Dashboard</a>
+                    <a href="product_catalog.html" class="text-text-secondary hover:text-primary transition-colors">Products</a>
+                    <a href="personal_dashboard.html" class="text-text-secondary hover:text-primary transition-colors">Personal</a>
+                    <a href="global_chat_interface.html" class="text-text-secondary hover:text-primary transition-colors">Chat</a>
+                    <a href="services_marketplace.html" class="text-text-secondary hover:text-primary transition-colors">Services</a>
+                    <a href="subscription_management.html" class="text-primary font-medium border-b-2 border-primary pb-1">Subscriptions</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1652841236281-576b8cacee20" 
+                                 alt="User profile picture" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm font-medium">John Smith</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-text-primary mb-2">Subscription Management</h1>
+            <p class="text-text-secondary">Manage your subscription plan and access premium features</p>
+        </div>
+
+        <!-- Current Subscription Status -->
+        <section class="card mb-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-semibold text-text-primary">Current Subscription</h2>
+                <span class="bg-success-100 text-success-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <i class="fas fa-check-circle mr-1"></i>Active
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="bg-primary-50 border border-primary-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-primary">Professional Plan</h3>
+                                <p class="text-sm text-text-secondary">Perfect for growing businesses</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-primary">$49</div>
+                                <div class="text-sm text-text-secondary">per month</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <div class="text-sm text-text-secondary">Next Billing Date</div>
+                                <div class="font-medium text-text-primary">November 27, 2025</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-text-secondary">Subscription Since</div>
+                                <div class="font-medium text-text-primary">March 15, 2024</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button class="btn-primary">
+                                <i class="fas fa-arrow-up mr-2"></i>Upgrade Plan
+                            </button>
+                            <button class="bg-secondary-100 text-secondary-700 px-4 py-2 rounded-md font-medium hover:bg-secondary-200 transition-colors">
+                                <i class="fas fa-cog mr-2"></i>Manage Billing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+                        <h4 class="font-medium text-accent-800 mb-2">Usage This Month</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-text-secondary">Product Listings</span>
+                                <span class="font-medium">47/100</span>
+                            </div>
+                            <div class="w-full bg-accent-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 47%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-success-50 border border-success-200 rounded-lg p-4">
+                        <h4 class="font-medium text-success-800 mb-2">Premium Features</h4>
+                        <div class="space-y-1 text-sm text-success-700">
+                            <div><i class="fas fa-check mr-2"></i>Advanced Filtering</div>
+                            <div><i class="fas fa-check mr-2"></i>Priority Support</div>
+                            <div><i class="fas fa-check mr-2"></i>Analytics Dashboard</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Plans Comparison -->
+        <section class="card mb-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-text-primary mb-2">Choose Your Plan</h2>
+                <p class="text-text-secondary">Select the perfect subscription tier for your business needs</p>
+            </div>
+
+            <!-- Desktop View -->
+            <div class="hidden lg:block overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-border">
+                            <th class="text-left py-4 px-4 text-text-secondary font-medium">Features</th>
+                            <th class="text-center py-4 px-4">
+                                <div class="bg-secondary-50 rounded-lg p-4">
+                                    <h3 class="text-lg font-semibold text-text-primary">Basic</h3>
+                                    <div class="text-2xl font-bold text-secondary mt-2">$19</div>
+                                    <div class="text-sm text-text-secondary">per month</div>
+                                    <button class="btn-secondary mt-3 w-full">Get Started</button>
+                                </div>
+                            </th>
+                            <th class="text-center py-4 px-4">
+                                <div class="bg-primary-50 border-2 border-primary rounded-lg p-4 relative">
+                                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                        <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">Current Plan</span>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-primary">Professional</h3>
+                                    <div class="text-2xl font-bold text-primary mt-2">$49</div>
+                                    <div class="text-sm text-text-secondary">per month</div>
+                                    <button class="btn-primary mt-3 w-full">Current Plan</button>
+                                </div>
+                            </th>
+                            <th class="text-center py-4 px-4">
+                                <div class="bg-accent-50 rounded-lg p-4">
+                                    <h3 class="text-lg font-semibold text-accent">Enterprise</h3>
+                                    <div class="text-2xl font-bold text-accent mt-2">$99</div>
+                                    <div class="text-sm text-text-secondary">per month</div>
+                                    <button class="btn-accent mt-3 w-full">Upgrade Now</button>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border">
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">Product Listings</td>
+                            <td class="py-4 px-4 text-center text-text-secondary">25 listings</td>
+                            <td class="py-4 px-4 text-center text-primary font-medium">100 listings</td>
+                            <td class="py-4 px-4 text-center text-accent font-medium">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">Advanced Filtering</td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">Priority Support</td>
+                            <td class="py-4 px-4 text-center text-text-secondary">Email only</td>
+                            <td class="py-4 px-4 text-center text-primary font-medium">Email + Chat</td>
+                            <td class="py-4 px-4 text-center text-accent font-medium">24/7 Phone</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">Analytics Dashboard</td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">API Access</td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center text-text-secondary">Limited</td>
+                            <td class="py-4 px-4 text-center text-accent font-medium">Full Access</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">Custom Branding</td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-medium text-text-primary">Dedicated Account Manager</td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-times text-error"></i></td>
+                            <td class="py-4 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile View -->
+            <div class="lg:hidden space-y-6">
+                <!-- Basic Plan -->
+                <div class="bg-secondary-50 rounded-lg p-6">
+                    <div class="text-center mb-4">
+                        <h3 class="text-lg font-semibold text-text-primary">Basic</h3>
+                        <div class="text-2xl font-bold text-secondary mt-2">$19</div>
+                        <div class="text-sm text-text-secondary">per month</div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Product Listings</span>
+                            <span class="font-medium">25 listings</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Advanced Filtering</span>
+                            <i class="fas fa-times text-error"></i>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Priority Support</span>
+                            <span class="font-medium">Email only</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Analytics Dashboard</span>
+                            <i class="fas fa-times text-error"></i>
+                        </div>
+                    </div>
+                    <button class="btn-secondary w-full">Get Started</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="bg-primary-50 border-2 border-primary rounded-lg p-6 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">Current Plan</span>
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-lg font-semibold text-primary">Professional</h3>
+                        <div class="text-2xl font-bold text-primary mt-2">$49</div>
+                        <div class="text-sm text-text-secondary">per month</div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Product Listings</span>
+                            <span class="font-medium text-primary">100 listings</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Advanced Filtering</span>
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Priority Support</span>
+                            <span class="font-medium text-primary">Email + Chat</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Analytics Dashboard</span>
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full">Current Plan</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-accent-50 rounded-lg p-6">
+                    <div class="text-center mb-4">
+                        <h3 class="text-lg font-semibold text-accent">Enterprise</h3>
+                        <div class="text-2xl font-bold text-accent mt-2">$99</div>
+                        <div class="text-sm text-text-secondary">per month</div>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Product Listings</span>
+                            <span class="font-medium text-accent">Unlimited</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Advanced Filtering</span>
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Priority Support</span>
+                            <span class="font-medium text-accent">24/7 Phone</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Analytics Dashboard</span>
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Custom Branding</span>
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                    </div>
+                    <button class="btn-accent w-full">Upgrade Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Billing History & Analytics -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Billing History -->
+            <section class="card">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-text-primary">Billing History</h3>
+                    <button class="text-primary hover:text-primary-600 text-sm font-medium">
+                        <i class="fas fa-download mr-1"></i>Download All
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-success-50 border border-success-200 rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-success-100 rounded-full p-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-text-primary">Professional Plan</div>
+                                <div class="text-sm text-text-secondary">October 27, 2025</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-medium text-text-primary">$49.00</div>
+                            <button class="text-primary hover:text-primary-600 text-sm">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-surface border border-border rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-secondary-100 rounded-full p-2">
+                                <i class="fas fa-receipt text-secondary text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-text-primary">Professional Plan</div>
+                                <div class="text-sm text-text-secondary">September 27, 2025</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-medium text-text-primary">$49.00</div>
+                            <button class="text-primary hover:text-primary-600 text-sm">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-surface border border-border rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-secondary-100 rounded-full p-2">
+                                <i class="fas fa-receipt text-secondary text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-text-primary">Professional Plan</div>
+                                <div class="text-sm text-text-secondary">August 27, 2025</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-medium text-text-primary">$49.00</div>
+                            <button class="text-primary hover:text-primary-600 text-sm">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="w-full mt-4 text-sm text-primary hover:text-primary-600 transition-colors">
+                    View All Invoices <i class="fas fa-arrow-right ml-1"></i>
+                </button>
+            </section>
+
+            <!-- Usage Analytics -->
+            <section class="card">
+                <h3 class="text-lg font-semibold text-text-primary mb-6">Usage Analytics</h3>
+
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-text-secondary">Product Listings</span>
+                            <span class="text-sm font-medium text-text-primary">47/100</span>
+                        </div>
+                        <div class="w-full bg-primary-200 rounded-full h-3">
+                            <div class="bg-primary h-3 rounded-full" style="width: 47%"></div>
+                        </div>
+                        <div class="text-xs text-text-secondary mt-1">47% of monthly limit used</div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-text-secondary">API Calls</span>
+                            <span class="text-sm font-medium text-text-primary">2,847/5,000</span>
+                        </div>
+                        <div class="w-full bg-accent-200 rounded-full h-3">
+                            <div class="bg-accent h-3 rounded-full" style="width: 57%"></div>
+                        </div>
+                        <div class="text-xs text-text-secondary mt-1">57% of monthly limit used</div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-text-secondary">Storage Used</span>
+                            <span class="text-sm font-medium text-text-primary">1.2GB/5GB</span>
+                        </div>
+                        <div class="w-full bg-secondary-200 rounded-full h-3">
+                            <div class="bg-secondary h-3 rounded-full" style="width: 24%"></div>
+                        </div>
+                        <div class="text-xs text-text-secondary mt-1">24% of storage limit used</div>
+                    </div>
+
+                    <div class="bg-warning-50 border border-warning-200 rounded-lg p-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-lightbulb text-warning mr-2"></i>
+                            <span class="text-sm font-medium text-warning-800">Recommendation</span>
+                        </div>
+                        <p class="text-sm text-warning-700 mt-1">
+                            Based on your usage patterns, the Enterprise plan would provide better value with unlimited listings and enhanced features.
+                        </p>
+                        <button class="btn-accent text-xs mt-2">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Payment Methods -->
+        <section class="card mt-8">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-semibold text-text-primary">Payment Methods</h3>
+                <button class="btn-primary">
+                    <i class="fas fa-plus mr-2"></i>Add Payment Method
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-primary-50 border-2 border-primary rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-primary-100 rounded p-2">
+                                <i class="fas fa-credit-card text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-text-primary">•••• •••• •••• 4242</div>
+                                <div class="text-sm text-text-secondary">Expires 12/27</div>
+                            </div>
+                        </div>
+                        <span class="bg-primary text-white px-2 py-1 rounded text-xs font-medium">Primary</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="text-primary hover:text-primary-600 text-sm">Edit</button>
+                        <button class="text-error hover:text-error-600 text-sm">Remove</button>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-border rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-secondary-100 rounded p-2">
+                                <i class="fab fa-paypal text-secondary"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-text-primary">PayPal Account</div>
+                                <div class="text-sm text-text-secondary">john.smith@email.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="text-primary hover:text-primary-600 text-sm">Edit</button>
+                        <button class="text-error hover:text-error-600 text-sm">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Upgrade Modal -->
+    <div id="upgradeModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-surface rounded-lg shadow-floating max-w-md w-full">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-text-primary">Upgrade to Enterprise</h3>
+                        <button id="closeUpgradeModal" class="text-text-secondary hover:text-text-primary">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="bg-accent-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-crown text-accent text-xl"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-accent">$99/month</div>
+                        <div class="text-sm text-text-secondary">Billed monthly</div>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span class="text-sm text-text-primary">Unlimited product listings</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span class="text-sm text-text-primary">24/7 priority support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span class="text-sm text-text-primary">Custom branding options</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span class="text-sm text-text-primary">Dedicated account manager</span>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <button id="confirmUpgrade" class="btn-accent flex-1">
+                            Upgrade Now
+                        </button>
+                        <button id="cancelUpgrade" class="bg-secondary-100 text-secondary-700 px-4 py-2 rounded-md font-medium hover:bg-secondary-200 transition-colors">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const upgradeModal = document.getElementById('upgradeModal');
+        const closeUpgradeModal = document.getElementById('closeUpgradeModal');
+        const confirmUpgrade = document.getElementById('confirmUpgrade');
+        const cancelUpgrade = document.getElementById('cancelUpgrade');
+
+        // Open upgrade modal
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Upgrade Now')) {
+                button.addEventListener('click', () => {
+                    upgradeModal.classList.remove('hidden');
+                });
+            }
+        });
+
+        // Close modal functions
+        const closeModal = () => {
+            upgradeModal.classList.add('hidden');
+        };
+
+        closeUpgradeModal?.addEventListener('click', closeModal);
+        cancelUpgrade?.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside
+        upgradeModal?.addEventListener('click', (e) => {
+            if (e.target === upgradeModal) {
+                closeModal();
+            }
+        });
+
+        // Confirm upgrade
+        confirmUpgrade?.addEventListener('click', () => {
+            // Simulate upgrade process
+            confirmUpgrade.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Processing...';
+            confirmUpgrade.disabled = true;
+            
+            setTimeout(() => {
+                closeModal();
+                // Show success message
+                const successAlert = document.createElement('div');
+                successAlert.className = 'fixed top-4 right-4 bg-success text-white px-6 py-3 rounded-lg shadow-floating z-50';
+                successAlert.innerHTML = '<i class="fas fa-check mr-2"></i>Successfully upgraded to Enterprise plan!';
+                document.body.appendChild(successAlert);
+                
+                setTimeout(() => {
+                    successAlert.remove();
+                }, 3000);
+                
+                // Reset button
+                confirmUpgrade.innerHTML = 'Upgrade Now';
+                confirmUpgrade.disabled = false;
+            }, 2000);
+        });
+
+        // Simulate real-time usage updates
+        function updateUsageMetrics() {
+            const usageBars = document.querySelectorAll('[style*="width:"]');
+            usageBars.forEach(bar => {
+                const currentWidth = parseInt(bar.style.width);
+                const variation = Math.floor(Math.random() * 6) - 3; // -3 to +3
+                const newWidth = Math.max(0, Math.min(100, currentWidth + variation));
+                bar.style.width = `${newWidth}%`;
+            });
+        }
+
+        // Update usage metrics every 30 seconds
+        setInterval(updateUsageMetrics, 30000);
+
+        // Payment method management
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent === 'Remove') {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (confirm('Are you sure you want to remove this payment method?')) {
+                        const card = button.closest('.bg-primary-50, .bg-surface');
+                        card.style.opacity = '0.5';
+                        card.style.pointerEvents = 'none';
+                        
+                        setTimeout(() => {
+                            card.remove();
+                        }, 500);
+                    }
+                });
+            }
+        });
+
+        // Add payment method simulation
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Add Payment Method')) {
+                button.addEventListener('click', () => {
+                    alert('Payment method addition would open a secure payment form in a real application.');
+                });
+            }
+        });
+
+        // Download invoice simulation
+        document.querySelectorAll('button').forEach(button => {
+            if (button.innerHTML.includes('fa-download')) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const originalContent = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalContent;
+                        // Simulate download
+                        const link = document.createElement('a');
+                        link.href = 'data:text/plain;charset=utf-8,Invoice%20downloaded%20successfully';
+                        link.download = 'invoice.pdf';
+                        link.click();
+                    }, 1000);
+                });
+            }
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !upgradeModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Initialize tooltips for feature explanations
+        document.querySelectorAll('[title]').forEach(element => {
+            element.addEventListener('mouseenter', (e) => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'absolute bg-text-primary text-white px-2 py-1 rounded text-xs z-50';
+                tooltip.textContent = e.target.title;
+                tooltip.style.top = e.target.offsetTop - 30 + 'px';
+                tooltip.style.left = e.target.offsetLeft + 'px';
+                e.target.parentNode.appendChild(tooltip);
+                
+                e.target.addEventListener('mouseleave', () => {
+                    tooltip.remove();
+                });
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
