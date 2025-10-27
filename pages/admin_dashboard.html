@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ABABA Gold Trade Hub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fababagold2292back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="bg-surface shadow-elevated border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">ABABA Gold Trade Hub</span>
+                    </div>
+                    <span class="text-sm text-text-secondary bg-primary-50 px-2 py-1 rounded-full">Admin Panel</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="admin_dashboard.html" class="text-primary font-medium border-b-2 border-primary pb-1">Dashboard</a>
+                    <a href="product_catalog.html" class="text-text-secondary hover:text-primary transition-colors">Products</a>
+                    <a href="global_chat_interface.html" class="text-text-secondary hover:text-primary transition-colors">Chat Monitor</a>
+                    <a href="services_marketplace.html" class="text-text-secondary hover:text-primary transition-colors">Services</a>
+                    <a href="subscription_management.html" class="text-text-secondary hover:text-primary transition-colors">Subscriptions</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1675335687627-3305a5298fda" 
+                                 alt="Admin profile picture" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm font-medium">Admin</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-text-primary mb-2">Admin Dashboard</h1>
+            <p class="text-text-secondary">Comprehensive system control and user management for ABABA Gold Trade Hub</p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Area -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- User Approval Queue -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-text-primary">Pending User Approvals</h2>
+                        <div class="flex items-center space-x-3">
+                            <button class="btn-primary text-sm">
+                                <i class="fas fa-check-double mr-2"></i>Bulk Approve
+                            </button>
+                            <span class="text-sm text-text-secondary bg-warning-50 px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1"></i>12 Pending
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-border">
+                                    <th class="text-left py-3 px-2">
+                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary">
+                                    </th>
+                                    <th class="text-left py-3 px-2 text-sm font-medium text-text-secondary">Business</th>
+                                    <th class="text-left py-3 px-2 text-sm font-medium text-text-secondary">Contact</th>
+                                    <th class="text-left py-3 px-2 text-sm font-medium text-text-secondary">Role</th>
+                                    <th class="text-left py-3 px-2 text-sm font-medium text-text-secondary">Submitted</th>
+                                    <th class="text-left py-3 px-2 text-sm font-medium text-text-secondary">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border">
+                                <tr class="hover:bg-primary-50 transition-colors">
+                                    <td class="py-4 px-2">
+                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary">
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <div>
+                                            <div class="font-medium text-text-primary">Golden Imports LLC</div>
+                                            <div class="text-sm text-text-secondary">License: GI-2024-001</div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <div>
+                                            <div class="text-sm text-text-primary">Sarah Johnson</div>
+                                            <div class="text-sm text-text-secondary">sarah@goldenimports.com</div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <span class="bg-accent-100 text-accent-800 px-2 py-1 rounded-full text-xs font-medium">Importer</span>
+                                    </td>
+                                    <td class="py-4 px-2 text-sm text-text-secondary">Oct 25, 2025</td>
+                                    <td class="py-4 px-2">
+                                        <div class="flex space-x-2">
+                                            <button class="bg-success text-white px-3 py-1 rounded text-xs hover:bg-success-600 transition-colors">
+                                                <i class="fas fa-check mr-1"></i>Approve
+                                            </button>
+                                            <button class="bg-error text-white px-3 py-1 rounded text-xs hover:bg-error-600 transition-colors">
+                                                <i class="fas fa-times mr-1"></i>Reject
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary-50 transition-colors">
+                                    <td class="py-4 px-2">
+                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary">
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <div>
+                                            <div class="font-medium text-text-primary">Premium Gold Manufacturing</div>
+                                            <div class="text-sm text-text-secondary">License: PGM-2024-045</div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <div>
+                                            <div class="text-sm text-text-primary">Michael Chen</div>
+                                            <div class="text-sm text-text-secondary">m.chen@premiumgold.com</div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded-full text-xs font-medium">Manufacturer</span>
+                                    </td>
+                                    <td class="py-4 px-2 text-sm text-text-secondary">Oct 24, 2025</td>
+                                    <td class="py-4 px-2">
+                                        <div class="flex space-x-2">
+                                            <button class="bg-success text-white px-3 py-1 rounded text-xs hover:bg-success-600 transition-colors">
+                                                <i class="fas fa-check mr-1"></i>Approve
+                                            </button>
+                                            <button class="bg-error text-white px-3 py-1 rounded text-xs hover:bg-error-600 transition-colors">
+                                                <i class="fas fa-times mr-1"></i>Reject
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary-50 transition-colors">
+                                    <td class="py-4 px-2">
+                                        <input type="checkbox" class="rounded border-border text-primary focus:ring-primary">
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <div>
+                                            <div class="font-medium text-text-primary">Elite Wholesale Gold</div>
+                                            <div class="text-sm text-text-secondary">License: EWG-2024-078</div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <div>
+                                            <div class="text-sm text-text-primary">David Rodriguez</div>
+                                            <div class="text-sm text-text-secondary">david@elitewholesale.com</div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-2">
+                                        <span class="bg-secondary-100 text-secondary-800 px-2 py-1 rounded-full text-xs font-medium">Wholesaler</span>
+                                    </td>
+                                    <td class="py-4 px-2 text-sm text-text-secondary">Oct 23, 2025</td>
+                                    <td class="py-4 px-2">
+                                        <div class="flex space-x-2">
+                                            <button class="bg-success text-white px-3 py-1 rounded text-xs hover:bg-success-600 transition-colors">
+                                                <i class="fas fa-check mr-1"></i>Approve
+                                            </button>
+                                            <button class="bg-error text-white px-3 py-1 rounded text-xs hover:bg-error-600 transition-colors">
+                                                <i class="fas fa-times mr-1"></i>Reject
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Platform Metrics -->
+                <section class="card">
+                    <h2 class="text-xl font-semibold text-text-primary mb-6">Platform Statistics</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="bg-primary-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-users text-primary text-xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-text-primary">1,247</div>
+                            <div class="text-sm text-text-secondary">Active Users</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-accent-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-handshake text-accent text-xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-text-primary">$2.4M</div>
+                            <div class="text-sm text-text-secondary">Daily Volume</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-success-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-chart-line text-success text-xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-text-primary">98.7%</div>
+                            <div class="text-sm text-text-secondary">System Health</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-warning-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-exclamation-triangle text-warning text-xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-text-primary">3</div>
+                            <div class="text-sm text-text-secondary">Alerts</div>
+                        </div>
+                    </div>
+
+                    <!-- User Role Breakdown -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-secondary-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-text-secondary">Wholesalers</span>
+                                <span class="text-lg font-bold text-secondary">456</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 rounded-full h-2 mt-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-text-secondary">Manufacturers</span>
+                                <span class="text-lg font-bold text-primary">342</span>
+                            </div>
+                            <div class="w-full bg-primary-200 rounded-full h-2 mt-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 48%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-accent-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-text-secondary">Importers</span>
+                                <span class="text-lg font-bold text-accent">449</span>
+                            </div>
+                            <div class="w-full bg-accent-200 rounded-full h-2 mt-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 63%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-8">
+                <!-- Recent Activity Feed -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Recent Activity</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-success-100 rounded-full p-2">
+                                <i class="fas fa-user-check text-success text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm text-text-primary">New user approved: <span class="font-medium">Golden Imports LLC</span></p>
+                                <p class="text-xs text-text-secondary">2 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-warning-100 rounded-full p-2">
+                                <i class="fas fa-flag text-warning text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm text-text-primary">Chat message flagged for review</p>
+                                <p class="text-xs text-text-secondary">15 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-primary-100 rounded-full p-2">
+                                <i class="fas fa-ad text-primary text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm text-text-primary">New ad campaign submitted</p>
+                                <p class="text-xs text-text-secondary">1 hour ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-accent-100 rounded-full p-2">
+                                <i class="fas fa-coins text-accent text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm text-text-primary">High-value transaction detected</p>
+                                <p class="text-xs text-text-secondary">2 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 text-sm text-primary hover:text-primary-600 transition-colors">
+                        View All Activity <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button class="w-full btn-primary text-left">
+                            <i class="fas fa-user-cog mr-3"></i>User Management
+                        </button>
+                        <button class="w-full btn-secondary text-left">
+                            <i class="fas fa-comments mr-3"></i>Chat Moderation
+                        </button>
+                        <button class="w-full bg-accent text-white px-4 py-2 rounded-md font-medium transition-all duration-200 hover:bg-accent-600 text-left">
+                            <i class="fas fa-bullhorn mr-3"></i>Ad Management
+                        </button>
+                        <button class="w-full bg-warning text-white px-4 py-2 rounded-md font-medium transition-all duration-200 hover:bg-warning-600 text-left">
+                            <i class="fas fa-cog mr-3"></i>System Settings
+                        </button>
+                    </div>
+                </section>
+
+                <!-- System Alerts -->
+                <section class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">System Alerts</h3>
+                    <div class="space-y-3">
+                        <div class="bg-error-50 border border-error-200 rounded-lg p-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-exclamation-circle text-error mr-2"></i>
+                                <span class="text-sm font-medium text-error">High CPU Usage</span>
+                            </div>
+                            <p class="text-xs text-error-700 mt-1">Server load at 87%</p>
+                        </div>
+                        <div class="bg-warning-50 border border-warning-200 rounded-lg p-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-warning mr-2"></i>
+                                <span class="text-sm font-medium text-warning">Backup Pending</span>
+                            </div>
+                            <p class="text-xs text-warning-700 mt-1">Last backup: 6 hours ago</p>
+                        </div>
+                        <div class="bg-success-50 border border-success-200 rounded-lg p-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-success mr-2"></i>
+                                <span class="text-sm font-medium text-success">All Systems Operational</span>
+                            </div>
+                            <p class="text-xs text-success-700 mt-1">No critical issues detected</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed inset-y-0 left-0 w-64 bg-surface shadow-lg">
+            <div class="p-4 border-b border-border">
+                <div class="flex items-center justify-between">
+                    <span class="text-lg font-semibold text-text-primary">Menu</span>
+                    <button id="closeMobileMenu" class="text-text-secondary hover:text-text-primary">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="p-4 space-y-2">
+                <a href="admin_dashboard.html" class="block py-2 px-3 text-primary bg-primary-50 rounded-md font-medium">Dashboard</a>
+                <a href="product_catalog.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Products</a>
+                <a href="personal_dashboard.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Personal</a>
+                <a href="global_chat_interface.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Chat Monitor</a>
+                <a href="services_marketplace.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Services</a>
+                <a href="subscription_management.html" class="block py-2 px-3 text-text-secondary hover:text-primary hover:bg-primary-50 rounded-md transition-colors">Subscriptions</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (closeMobileMenu) {
+            closeMobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        mobileMenu?.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Simulate real-time updates
+        function updateMetrics() {
+            const metrics = document.querySelectorAll('[data-metric]');
+            metrics.forEach(metric => {
+                const currentValue = parseInt(metric.textContent.replace(/[^0-9]/g, ''));
+                const variation = Math.floor(Math.random() * 10) - 5;
+                const newValue = Math.max(0, currentValue + variation);
+                
+                if (metric.textContent.includes('$')) {
+                    metric.textContent = `$${(newValue / 1000).toFixed(1)}M`;
+                } else if (metric.textContent.includes('%')) {
+                    metric.textContent = `${Math.min(100, newValue)}%`;
+                } else {
+                    metric.textContent = newValue.toLocaleString();
+                }
+            });
+        }
+
+        // Update metrics every 30 seconds
+        setInterval(updateMetrics, 30000);
+
+        // Bulk selection functionality
+        const selectAllCheckbox = document.querySelector('thead input[type="checkbox"]');
+        const rowCheckboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+
+        selectAllCheckbox?.addEventListener('change', (e) => {
+            rowCheckboxes.forEach(checkbox => {
+                checkbox.checked = e.target.checked;
+            });
+        });
+
+        // Individual checkbox handling
+        rowCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedBoxes = document.querySelectorAll('tbody input[type="checkbox"]:checked');
+                selectAllCheckbox.checked = checkedBoxes.length === rowCheckboxes.length;
+                selectAllCheckbox.indeterminate = checkedBoxes.length > 0 && checkedBoxes.length < rowCheckboxes.length;
+            });
+        });
+
+        // Approval/Rejection handlers
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Approve')) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const row = button.closest('tr');
+                    row.style.backgroundColor = '#F0FFF4';
+                    setTimeout(() => {
+                        row.style.opacity = '0.5';
+                        button.textContent = 'Approved';
+                        button.className = 'bg-success-200 text-success-800 px-3 py-1 rounded text-xs cursor-not-allowed';
+                        button.disabled = true;
+                    }, 500);
+                });
+            } else if (button.textContent.includes('Reject')) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const row = button.closest('tr');
+                    row.style.backgroundColor = '#FED7D7';
+                    setTimeout(() => {
+                        row.style.opacity = '0.5';
+                        button.textContent = 'Rejected';
+                        button.className = 'bg-error-200 text-error-800 px-3 py-1 rounded text-xs cursor-not-allowed';
+                        button.disabled = true;
+                    }, 500);
+                });
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
